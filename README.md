@@ -7,6 +7,18 @@ Infinity ZERO lets people describe a recurring workflow, finds the friction in i
 
 > Understand Work → Detect Friction → Recommend Improvement → Simulate Benefits → Measure Results
 
+## Install as an app
+
+Infinity ZERO is an installable app (PWA) — no app store needed.
+
+- **Android (Chrome):** open the site → tap **Install app** (in the header, Settings or the More menu), or browser menu ⋮ → *Install app*.
+- **iPhone / iPad (Safari):** tap **Share** → **Add to Home Screen**.
+- **Computer (Chrome / Edge):** click the install icon in the address bar or **Install app** in the header.
+
+Once installed it opens full screen from its own icon with a splash screen, uses an app-style bottom tab bar on phones (Home · Analyze · Demo · Lab · More), has home-screen shortcuts (Demo, Analyze, Feedback), and screens you've opened keep working offline. AI analysis and saving feedback to Supabase need a connection.
+
+Installation requires HTTPS, so deploy first (e.g. Vercel) and install from that URL. `localhost` also works for testing.
+
 ## Quick start
 
 ```bash

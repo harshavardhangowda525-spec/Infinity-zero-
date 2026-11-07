@@ -59,6 +59,19 @@ body {
   background-attachment: fixed;
 }
 
+/* App feel: no rubber-band page bounce, no grey tap flash, no text selection on controls */
+html,
+body {
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+nav,
+button,
+[role="tab"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 ::selection {
   background: rgb(0 217 255 / 0.3);
 }

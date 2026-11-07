@@ -11,6 +11,8 @@ import { Input, Label } from "@/components/ui/input";
 import { ChoiceGroup } from "@/components/ui/choice";
 import { Modal, ModalContent } from "@/components/ui/sheet";
 import { useStatus } from "@/components/layout/providers";
+import { InstallButton } from "@/components/layout/install-button";
+import { useInstall } from "@/components/layout/pwa";
 import { actions, isCloudSync, useAppState } from "@/lib/store";
 import { getBrowserSupabase } from "@/lib/supabase/client";
 
@@ -26,6 +28,7 @@ function AuthNotice() {
 
 export default function SettingsPage() {
   const status = useStatus();
+  const { standalone } = useInstall();
   const settings = useAppState((s) => s.settings);
   const counts = { w: useAppState((s) => s.workflows.length), p: useAppState((s) => s.plans.length), m: useAppState((s) => s.measurements.length) };
   const [email, setEmail] = React.useState("");
@@ -60,6 +63,11 @@ export default function SettingsPage() {
       <PageHeader eyebrow="Settings" title="Preferences & data" />
 
       <div className="space-y-5">
+        <Card glow>
+          <CardHeader><CardTitle>Infinity ZERO app</CardTitle><CardDescription>{standalone ? "You're using the installed app." : "Install it on your phone or computer — it opens full screen from its own icon and works offline for screens you've visited."}</CardDescription></CardHeader>
+          {!standalone && <CardContent><InstallButton variant="button" /></CardContent>}
+        </Card>
+
         <Card>
           <CardHeader><CardTitle>Account</CardTitle><CardDescription>Optional. Guests can use every feature; accounts sync workflows across devices.</CardDescription></CardHeader>
           <CardContent>
