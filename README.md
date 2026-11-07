@@ -19,13 +19,26 @@ Once installed it opens full screen from its own icon with a splash screen, uses
 
 Installation requires HTTPS, so deploy first (e.g. Vercel) and install from that URL. `localhost` also works for testing.
 
-## Quick start
+## Quick start (run it on your laptop)
+
+Requires **Node.js 20+** (https://nodejs.org).
 
 ```bash
 npm install
-cp .env.example .env.local   # optional — everything works without keys
-npm run dev                  # http://localhost:3000
+npm start
 ```
+
+`npm start` checks your setup, builds the app the first time (about a minute), picks a free port and prints the address, usually **http://localhost:3000**. Keep that terminal window open while you use the app; closing it stops the app.
+
+For code changes with live reload use `npm run dev` (offline/service-worker features are only active with `npm start`). Optional keys go in `.env.local` (copy `.env.example`).
+
+### "localhost refused to connect"?
+
+The server isn't running. Check the terminal where you ran `npm start`:
+- It must still be open and show **✔ Infinity ZERO is running**.
+- Use the exact address it prints (it may be `:3001` if 3000 was busy).
+- If it shows a red ✖ message, follow it (e.g. run `npm install`, or update Node.js).
+- On a phone, `localhost` means the phone itself, so use the emulator steps instead (Chrome DevTools device toolbar, or `adb reverse tcp:3000 tcp:3000` for the Android emulator).
 
 With no keys configured the app runs fully in **demo mode**:
 

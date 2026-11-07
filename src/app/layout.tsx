@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+// Fonts are bundled from npm so the app builds and runs with no internet access.
+import "@fontsource-variable/inter";
+import "@fontsource-variable/space-grotesk";
 import "./globals.css";
 import { Providers } from "@/components/layout/providers";
 import { AppShell } from "@/components/layout/app-shell";
 import { PwaProvider } from "@/components/layout/pwa";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const space = Space_Grotesk({ subsets: ["latin"], variable: "--font-space", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "Infinity ZERO — AI Friction Elimination Engine", template: "%s · Infinity ZERO" },
@@ -25,7 +25,7 @@ export const viewport: Viewport = { themeColor: "#070B16", width: "device-width"
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${space.variable}`}>
+    <html lang="en">
       <body>
         <PwaProvider>
           <Providers>

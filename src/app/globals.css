@@ -15,8 +15,8 @@
   --color-amber: #ffb547;
   --color-danger: #ff5c7a;
   --color-success: #2ee6a6;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --radius-xl: 1rem;
   --radius-2xl: 1.25rem;
   --animate-flow: flow 1.6s linear infinite;
